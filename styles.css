@@ -4,6 +4,18 @@
     box-sizing: border-box;
 }
 
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -12,6 +24,30 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#loading-screen {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: black;
+    color: white;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: opacity 1.5s ease;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loading-text {
+    animation: blink 1.5s infinite ease;
 }
 
 .kbc-button {
@@ -26,11 +62,11 @@ body {
     left: 50%;
     transform: translate(-50%, 0);
     opacity: 0.75;
+    z-index: 1;
 }
 
 .btns p {
     color: #fff;
-    font-family: 'Courier New', Courier, monospace;
     font-size: 1.5rem;
     opacity: 0.5;
 }
@@ -40,14 +76,10 @@ body {
     height: 100vh;
 }
 
-.w {
-    display: flex;
-    justify-content: center;
-}
-
 .row {
     margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 }
