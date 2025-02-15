@@ -11,7 +11,7 @@ window.addEventListener("load", function () {
   const CANVAS_WIDTH = (canvas.width = window.innerWidth);
   const CANVAS_HEIGHT = (canvas.height = window.innerHeight);
 
-  const playerImage = new Image();
+  let playerImage = document.getElementById("idle1");
   const player = { width: 799 * 0.5, height: 736 * 0.5, isMoving: false, isPunching: false, facingLeft: false };
   let imageToShow = 0;
   let animationToShow = 0;
@@ -23,22 +23,22 @@ window.addEventListener("load", function () {
     {
       name: "idle",
       frame: Array.from(
-        { length: 21 },
-        (_, i) => `./Assets/Idle/idle${i + 1}.png`
+        { length: 20 },
+        (_, i) => document.getElementById(`idle${i + 1}`)
       ),
     },
     {
       name: "punching",
       frame: Array.from(
         { length: 10 },
-        (_, i) => `./Assets/Punch/punching${i + 1}.png`
+        (_, i) => document.getElementById(`punching${i + 1}`)
       ),
     },
     {
       name: "running",
       frame: Array.from(
         { length: 25 },
-        (_, i) => `./Assets/Running/running${i + 1}.png`
+        (_, i) => document.getElementById(`running${i + 1}`)
       ),
     }
   ];
@@ -50,7 +50,6 @@ window.addEventListener("load", function () {
       player.isMoving = true;
       player.facingLeft = false;
     } else {
-      console.log("Further is too dangerous...");
       animationToShow = 0;
       player.isMoving = false;
     }
@@ -63,14 +62,13 @@ window.addEventListener("load", function () {
       player.isMoving = true;
       player.facingLeft = true;
     } else {
-      console.log("I cannot afford to go back...");
       animationToShow = 0;
       player.isMoving = false;
     }
   }
 
   function startPunching() {
-    if (!player.isPunching) { // Add
+    if (!player.isPunching) {
       animationToShow = 1;
       player.isPunching = true;
       player.isMoving = false;
@@ -136,16 +134,19 @@ window.addEventListener("load", function () {
     } else {
       ctx.drawImage(playerImage, startX, startY, player.width, player.height);
     }
+
     ctx.restore();
+
     const currentAnimation = spriteAnimations[animationToShow].frame;
     if (gameFrame % frameStagger === 0) {
       if (imageToShow < currentAnimation.length) {
-        playerImage.src = currentAnimation[imageToShow];
+        playerImage = currentAnimation[imageToShow];
         imageToShow++;
       } else {
         imageToShow = 0;
       }
     }
+    
     gameFrame++;
     requestAnimationFrame(animate);
   }
