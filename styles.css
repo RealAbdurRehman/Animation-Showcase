@@ -1,87 +1,90 @@
-*, *:before, *:after {
-    box-sizing: border-box;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 @keyframes blink {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-image: url("https://img.freepik.com/free-vector/cartoon-computer-games-night-forest-landscape-plant-green-natural-environment-wood-grass_1284-41530.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: url("https://img.freepik.com/free-vector/cartoon-computer-games-night-forest-landscape-plant-green-natural-environment-wood-grass_1284-41530.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: "Courier New", Courier, monospace;
+  user-select: none;
 }
 
 img {
-    display: none;
+  display: none;
 }
 
 #loading-screen {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    background-color: black;
-    color: white;
-    display: grid;
-    place-items: center;
-    justify-content: center;
-    z-index: 100;
-    transition: opacity 1.5s ease;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: black;
+  color: white;
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: opacity 1.5s ease;
 }
 
 .loading-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .loading-text {
-    animation: blink 1.5s infinite ease;
+  animation: blink 1.5s infinite ease;
 }
 
 .kbc-button {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
 
 .btns {
-    text-align: center;
-    position: absolute;
-    top: 2%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    opacity: 0.75;
-    z-index: 1;
+  text-align: center;
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0.75;
+  z-index: 1;
 }
 
 .btns p {
-    color: #fff;
-    font-size: 1.5rem;
-    opacity: 0.5;
+  color: #fff;
+  font-size: 1.5rem;
+  opacity: 0.5;
 }
 
 .canvas {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 .row {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
