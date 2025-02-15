@@ -82,7 +82,7 @@ window.addEventListener("load", function () {
   }
 
   function handleBoundaries() {
-    if (player.position.x <=  -player.width * 0.35) {
+    if (player.position.x <= -player.width * 0.35) {
       player.position.x = -player.width * 0.35;
       animationToShow = player.isPunching ? 1 : 0;
     } else if (player.position.x >= CANVAS_WIDTH - player.width * 0.65) {
