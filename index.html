@@ -9,13 +9,15 @@
         <link rel="stylesheet" href="./styles.css" />
     </head>
     <body>
-        <div class="btns">
-            <div class="w">
-                <kbd class="kbc-button">W</kbd>
+        <div id="loading-screen">
+            <div class="loading-content">
+                <h1 class="loading-text">Loading...</h1>
+                <i>Please wait</i>
             </div>
+        </div>
+        <div class="btns">
             <div class="row">
                 <kbd class="kbc-button">A</kbd>
-                <kbd class="kbc-button">S</kbd>
                 <kbd class="kbc-button">D</kbd>
             </div>
             <p>To Move</p>
@@ -23,6 +25,6 @@
             <p>To Punch</p>
         </div>
         <canvas id="canvas" class="canvas"></canvas>
+        <script src="./script.js"></script>
     </body>
-    <script src="./script.js"></script>
 </html>
